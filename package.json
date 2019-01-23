@@ -1,0 +1,51 @@
+{
+  "name": "vue-ts-electron",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "author": "hzb@jiagouyun.com",
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "ci": "node src/git-commit.js",
+    "serve": "vue-cli-service serve",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "vue-cli-service build",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "register-service-worker": "^1.5.2",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.17",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "inquirer": "^6.2.1",
+    "shelljs": "^0.8.3",
+    "@types/jest": "^23.1.4",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.2.0",
+    "@vue/cli-plugin-pwa": "^3.2.0",
+    "@vue/cli-plugin-typescript": "^3.2.0",
+    "@vue/cli-plugin-unit-jest": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "electron": "^4.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "prettier": "^1.15.3",
+    "style-resources-loader": "^1.2.1",
+    "ts-jest": "^23.0.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.0.0",
+    "vue-cli-plugin-electron-builder": "^1.0.0-rc.10",
+    "vue-cli-plugin-style-resources-loader": "^0.1.3"
+  },
+  "main": "background.js"
+}

@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  font-size: 14px;
+  color: #666;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  color: #727c85;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+@pull: left, right;
+@textAlign: left, center, right;
+.directs(@directs, @index, @prefix, @cssfix) when (@index > 0) {
+  .directs(@directs, (@index - 1), @prefix, @cssfix);
+  @direct: extract(@directs, @index);
+  .@{prefix}@{direct} {
+    @{cssfix}: @direct;
+  }
+}
+
+// generate pull-left, pull-right
+.directs(@pull, length(@pull), pull-, float);
+
+// generate text-left, text-center, text-right
+.directs(@textAlign, length(@textAlign), text-, text-align);
